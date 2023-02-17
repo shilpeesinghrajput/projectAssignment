@@ -54,7 +54,7 @@ if(result){
      }
   return (
     <div className='product'>
-      <h1>Update Tasks</h1>
+      <h2>Update Tasks</h2>
       <input type="text" placeholder='Enter product name' className='inputBox'
        value={title}  onChange={(e)=>setTitle(e.target.value)}/>
             {error&& !title  && <span className='invaild-input'>Enter valid Title</span>}

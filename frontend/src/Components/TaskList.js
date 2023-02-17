@@ -49,7 +49,7 @@ const TaskList = () => {
 
   return (
     <div className='product-list'>
-      <h2>Tasks List</h2>
+      <h3>Tasks List</h3>
       <input type="" className='search-product-box' placeholder='search'
         onChange={searchHandler} />
 
@@ -60,7 +60,7 @@ const TaskList = () => {
         tasks.length > 0 ? tasks.map((item, index) =>
           
             <div key={item._id} className="card col-3 m-4" style={{ width: 18 + 'rem' }}>
-              <div className="card-header  bg-primary text-white">
+              <div className={"card-header text-white" + item.is_active ? "bg-primary":"bg-success"}>
                 {item.title}
               </div>
               <div className="card-body">

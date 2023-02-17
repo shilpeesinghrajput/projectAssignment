@@ -46,7 +46,7 @@
 }
 .appButton{
   margin: 20px;
-  margin-right: 42%;
+  margin-right: 45%;
   width: 150px;
   padding: 10px;
   border:  1px solid;
@@ -71,7 +71,7 @@ margin-left: 18px;
  
 }
 
-.product-list ul li{
+/* .product-list ul li{
   display: inline-block;
   padding: 5px;
   width: 150px;
@@ -80,19 +80,21 @@ margin-left: 18px;
 }
 .product-list ul{
   margin: 0;
-}
+} */
 
 .search-product-box{
-  width: 400px;
-  height: 40px;
+  width: 500px;
+  height: 45px;
   margin: 20px;
   padding-left: 30px;
-  border: 1px solid rgb(64, 147, 179);
+  border: 1px solid rgb(33, 150, 197);
   border-radius: 20px;
+  
 }
-h1{
-  margin-right: 60%;
+.search-product-box input{
+color: red;
 }
+
 .inputBox{
   display: block;
   width: 300px;
@@ -131,16 +133,15 @@ h1{
   font-size: calc(10px + 2vmin);
   color: white;
 }
+h2{
+  margin-right: 63%;
+}
 
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card{
+  box-shadow: 4px 4px 6px blue;
 }
+
+

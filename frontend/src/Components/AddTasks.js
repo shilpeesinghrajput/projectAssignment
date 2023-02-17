@@ -32,7 +32,7 @@ function AddTasks() {
      }
   return (
     <div className='product'>
-      <h1>Add a Task</h1>
+      <h2>Add a Task</h2>
       <input type="text" placeholder='Enter Task Title' className='inputBox' value={title}  onChange={(e)=>setTitle(e.target.value)}/>
      {error&& !title  && <span className='invaild-input'>Enter valid Title</span>}
 
