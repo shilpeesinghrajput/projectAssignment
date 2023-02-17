@@ -26,7 +26,7 @@ app.post("/login",async(req,res)=>{
     res.send({result:"user not found"})
    }
 } else{
-    res.send({result:"user not found"})
+    res.send({result:"user not found"}) 
 }
 })
 
