@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
+  const [statuss, setStatus]= React.useState("")
+  const [named, setNamed] = React.useState("")
   useEffect(() => {
     getTasks();
 
@@ -32,26 +34,48 @@ const TaskList = () => {
     console.warn(id);
 
   }
-
-
-  const searchHandler = async (e) => {
-    let key = e.target.value;
-    if (key) {
-      let result = await fetch(` http://localhost:5000/search/${key}`)
+  const statusHandler = async (e) => {
+    setStatus(e);
+    let status = e;
+      let result = await fetch(` http://localhost:5000/search/${named}-${status}`)
       result = await result.json();
       if (result) {
         setTasks(result);
       } else {
         getTasks();
       }
-    }
+  }
+// add a new prop named key plss
+  const searchHandler = async (e) => {
+setNamed(e)
+    let key = e;
+   
+      let result = await fetch(` http://localhost:5000/search/${key}-${statuss}`)
+      result = await result.json();
+      if (result) {
+        setTasks(result);
+      } else {
+        getTasks();
+      }
+    
   }
 
   return (
     <div className='product-list'>
       <h3>Tasks List</h3>
-      <input type="" className='search-product-box' placeholder='search'
-        onChange={searchHandler} />
+      <div className='d-flex justify-content-center'>
+      <input type="" className='search-product-box ' placeholder='Search'
+        onChange={(e)=>searchHandler(e.target.value)} />
+        <select name="" id="" className='search-product-box1'
+      
+        value={statuss}  onChange={(e)=>{statusHandler(e.target.value);}} >
+     <option value="">Select status</option>
+      <option value="Plan">Plan</option>
+      <option value="Development">Development</option>
+      <option value="QA">QA</option>
+      <option value="Done">Done</option>
+     </select>
+     </div>
 
 <div className='row justify-content-center'>
 
@@ -59,8 +83,8 @@ const TaskList = () => {
         
         tasks.length > 0 ? tasks.map((item, index) =>
           
-            <div key={item._id} className="card col-3 m-4" style={{ width: 18 + 'rem' }}>
-              <div className={"card-header text-white" + item.is_active ? "bg-primary":"bg-success"}>
+            <div key={item._id} className="card col-3 m-4 shadow-lg p-3 mb-5 bg-white rounded" style={{ width: 18 + 'rem' }}>
+              <div className={item.is_active ? "bg-primary card-header text-white":"bg-success card-header text-white"}>
                 {item.title}
               </div>
               <div className="card-body">

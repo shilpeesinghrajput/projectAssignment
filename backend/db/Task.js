@@ -6,6 +6,6 @@ const taskSchema = new mongoose.Schema({
     is_active: { type: Boolean, default: true },
     statuss:String,
    
-
+  
 });
 module.exports = mongoose.model("tasks", taskSchema);

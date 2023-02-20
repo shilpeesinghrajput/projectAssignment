@@ -50,7 +50,7 @@
   width: 150px;
   padding: 10px;
   border:  1px solid;
-  background-color: rgb(27, 135, 177);;
+  background-color: rgb(27, 135, 177);
   cursor: pointer;
   color: white;
   font-family: B612;
@@ -89,11 +89,21 @@ margin-left: 18px;
   padding-left: 30px;
   border: 1px solid rgb(33, 150, 197);
   border-radius: 20px;
+
   
 }
-.search-product-box input{
-color: red;
+
+.search-product-box1{
+  width: 200px;
+  height: 45px;
+  margin: 20px;
+  padding-left: 30px;
+  border: 1px solid rgb(33, 150, 197);
+  border-radius: 20px;
+
+  
 }
+
 
 .inputBox{
   display: block;

@@ -43,7 +43,7 @@ function Signup(){
     }
     return(
         <div className="Register">
-            <h1>Register</h1>
+            <h2>Register</h2>
 <input className="inputBox" type="text"placeholder="Enter Name" required
 value={name} onChange={(e)=>setName(e.target.value)} />
  {error&& !name  && <span className='invaild-input'>Enter valid name</span>}

@@ -31,6 +31,11 @@ app.post("/login",async(req,res)=>{
 })
 
 app.post("/add-task", async(req ,res)=>{
+    if(req.body.statuss == 'Done'){
+        req.body.is_active = false;
+    }else{
+        req.body.is_active = true;
+    }
     let task = new Task(req.body);
     let result =await task.save();
     res.send(result);
@@ -64,6 +69,8 @@ app.get("/task/:id",async(req,res)=>{
 app.put("/task/:id", async (req,res)=>{
     if(req.body.statuss == 'Done'){
         req.body.is_active = false;
+    }else{
+        req.body.is_active = true;
     }
     let result = await Task.updateOne(
         {_id:req.params.id},
@@ -73,10 +80,13 @@ app.put("/task/:id", async (req,res)=>{
 })
 
 app.get("/search/:key" , async (req,res)=>{
-    let result= await Product.find({
+    let values=req.params?.key.split('-')
+    let result= await Task.find({
         "$or":[
             {
-                title:{$regex:req.params.key}
+                title:{$regex:values[0]},
+                statuss:{$regex:values[1]},
+               
             }
         ]
     })

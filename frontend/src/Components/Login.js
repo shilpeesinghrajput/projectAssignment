@@ -38,7 +38,7 @@ function Login() {
   }
   return (
     <div className='login'>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <input  value={email} className="inputBox" type="text" required
       placeholder='enter your email' onChange={(e)=>setEmail(e.target.value)} />
       
